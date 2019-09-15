@@ -1,0 +1,40 @@
+/* body {
+    background-color: black;
+} */
+
+h1 {
+    text-align: center;
+    margin-top: .5em;
+    margin-bottom: .9em;
+    color: crimson;
+    text-shadow: 5px 5px 5px yellowgreen;
+    font-weight: 800;
+    font-size: 60px;
+}
+
+#giphy-input {
+    width: 900px;
+}
+
+.recent-search {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin:20px 0px;
+}
+
+/* .btn {
+    background-color: yellowgreen;
+} */
+
+.wrapper-buttons {
+    border: 1px solid lightgray;
+    margin-left: .5em;
+    margin-bottom: 1em;
+    border-radius: .5em;
+}
+
+.btn-delete {
+    border-left: 1px solid black;
+    border-radius: 0;
+}
