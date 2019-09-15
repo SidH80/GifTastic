@@ -1,77 +1,62 @@
-console.log("hooked up");
+let buttons = ["Android", "Google", "Samsung"];
 
-let buttons = [ 'Android', 'Samsung', 'Google'];
+function alertGiphyName() {
 
-const api_key = 'lJvuzysSVwN88IM6jlOuplJ3f43YhmxW'
+  var giphyName = $(this).attr("#data-name");
 
-function displayGiphy() {
-
-  var giphy = $(this).attr("data-name");
-
-  var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&tag=cats";
-
-  // Creates AJAX call for the specific movie button being clicked
-  $.ajax({
-    url: "https://api.giphy.com/v1/gifs/random?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&tag=cats" ,
-    method: "GET"
-  }).then(function (response) {
-
-    //  for(var i = 0; i < buttons.length; i++)
-    //      {
-    //        var gifDiv = $("<div>");
-
-    //        var rating = results[i].rating;
-
-    //        var p = $("<p>").text("Rating: " + rating);
-
-    //        var personImage = $("<img>");
-    //        personImage.attr("src", results[i].images.fixed_height.url);
-
-    //        gifDiv.prepend(p);
-    //        gifDiv.prepend(personImage);
-
-    //        $("#giphy-view").prepend(gifDiv);
-    //      }
-
-    console.log(response);
-  });
-
-}
+  alert(giphyName);
+};
 
 function renderButtons() {
 
+  // Delete the content inside the buttons-view div prior to adding new movies
+  // (this is necessary otherwise you will have repeat buttons)
   $("#buttons-view").empty();
 
-  // Loops through the array of movies
-  for(var i = 0; i < buttons.length; i++)
+  // Loop through the array of buttons, then generate buttons for each movie in the array
+
+  for(let i = 0; i < buttons.length; i++)
   {
+    //creates the button and sets it to a vairable
+    btn = $("<button>");
 
-    var a = $("<button>");
+    //names the button text the name pushed to the array
+    btn.text(buttons[i]);
 
-    a.addClass("giphy btn-primary");
+    //adds bootstrap styling to the button
+    btn.addClass("btn-primary giphy");
 
-    a.attr("data-name", buttons[i]);
+    //attributes the name of the button as a data value
+    btn.attr("data-name", buttons[i]);
 
-    a.text(buttons[i]);
-
-    $("#buttons-view").append(a);
+    //appends the button to the page
+    $("#buttons-view").append(btn);
   }
+
+
 }
 
 // This function handles events where the add movie button is clicked
+
 $("#add-giphy").on("click", function (event) {
+  // event.preventDefault() prevents submit button from trying to send a form.
+  // Using a submit button instead of a regular button allows the user to hit
+  // "Enter" instead of clicking the button if desired
+
   event.preventDefault();
 
-  var giphy = $("#giphy-input").val().trim();
+  // Write code to grab the text the user types into the input field
 
-  buttons.push(giphy);
+  var button = $("#giphy-input").val().trim();
+  //.trim() gets rid of extra whitespace in front and behind
+  // Write code to add the new movie into the movies array
 
+  buttons.push(button);
+  // The renderButtons function is called, rendering the list of movie buttons
   renderButtons();
-
 });
 
-// Adding click event listeners to all elements with a class of "movie"
-$(document).on("click", ".giphy", displayGiphy);
+$(document).on("click", ".giphy", alertGiphyName);
 
-// Calling the renderButtons function to display the intial buttons
+// Calling the renderButtons function to display the initial list of movies
 renderButtons();

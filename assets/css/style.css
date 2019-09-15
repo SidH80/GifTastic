@@ -27,14 +27,17 @@ h1 {
     background-color: yellowgreen;
 } */
 
-.wrapper-buttons {
+/* .wrapper-buttons {
     border: 1px solid lightgray;
     margin-left: .5em;
     margin-bottom: 1em;
     border-radius: .5em;
-}
+} */
 
-.btn-delete {
-    border-left: 1px solid black;
-    border-radius: 0;
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin: 5px;
+    border-radius: 5px;
 }
