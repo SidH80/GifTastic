@@ -16,12 +16,12 @@ h1 {
     width: 900px;
 }
 
-.recent-search {
+/* .recent-search {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin:20px 0px;
-}
+} */
 
 /* .btn {
     background-color: yellowgreen;
