@@ -2,7 +2,9 @@ let buttons = ["Android", "Google", "Samsung"];
 
 function alertGiphyName() {
 
-  var giphyName = $(this).attr("#data-name");
+  var giphyName = $(this).attr("data-name");
+
+  console.log(giphyName);
 
   alert(giphyName);
 };
