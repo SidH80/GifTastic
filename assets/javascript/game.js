@@ -1,6 +1,6 @@
 let buttons = ["Android", "Google", "Samsung"];
 
-function alertGiphyName() {
+function renderGiphy() {
 
   //assigns the data-name attribbute to be entered into the api link
   var giphyName = $(this).attr("data-name");
@@ -14,6 +14,43 @@ function alertGiphyName() {
   }).then(function(response) {
 
     console.log(JSON.stringify(response))
+    //data dump works
+    //$("#giphy-view").text(JSON.stringify(response));
+    var results = response.data;
+
+          $("#giphy-view").empty();
+          // Looping over every result item
+          for (var i = 0; i < results.length; i++) {
+
+            // Only taking action if the photo has an appropriate rating
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+              // Creating a div for the gif
+              var gifDiv = $("<div>");
+
+              // Storing the result item's rating
+              var rating = results[i].rating;
+
+              // Creating a paragraph tag with the result item's rating
+              var p = $("<p>").text("Rating: " + rating);
+
+              // Creating an image tag
+              var giphyImage = $("<img>");
+
+              giphyImage.addClass("giphy");
+
+              // Giving the image tag an src attribute of a proprty pulled off the
+              // result item
+              giphyImage.attr("src", results[i].images.fixed_height.url);
+
+              // Appending the paragraph and personImage we created to the "gifDiv" div we created
+              gifDiv.append(p);
+              gifDiv.append(giphyImage);
+
+              // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+              $("#giphy-view").prepend(gifDiv);
+
+          }
+        }
 
   });
 
@@ -67,7 +104,7 @@ $("#add-giphy").on("click", function (event) {
   renderButtons();
 });
 
-$(document).on("click", ".giphy", alertGiphyName);
+$(document).on("click", ".giphy", renderGiphy);
 
 // Calling the renderButtons function to display the initial list of movies
 renderButtons();
