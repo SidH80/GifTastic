@@ -52,7 +52,8 @@ h1 {
     column-gap: 1em;
 }
 
-.giphy img {
+img {
     height: 100%;
     width: 100%;
+    border-radius: 10px;
 }

@@ -42,12 +42,12 @@ function renderGiphy() {
               // result item
               giphyImage.attr("src", results[i].images.fixed_height.url);
 
-              // Appending the paragraph and personImage we created to the "gifDiv" div we created
               gifDiv.append(p);
               gifDiv.append(giphyImage);
 
               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
               $("#giphy-view").prepend(gifDiv);
+
 
           }
         }
@@ -75,7 +75,7 @@ function renderButtons() {
     btn.text(buttons[i]);
 
     //adds bootstrap styling to the button
-    btn.addClass("btn-primary giphy");
+    btn.addClass("btn-primary giphy-render");
 
     //attributes the name of the button as a data value
     btn.attr("data-name", buttons[i]);
@@ -104,7 +104,7 @@ $("#add-giphy").on("click", function (event) {
   renderButtons();
 });
 
-$(document).on("click", ".giphy", renderGiphy);
+$(document).on("click", ".giphy-render", renderGiphy);
 
 // Calling the renderButtons function to display the initial list of movies
 renderButtons();
