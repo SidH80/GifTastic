@@ -1,4 +1,4 @@
-let buttons = ["Android", "Google", "Samsung"];
+let buttons = ["Android", "Google", "Samsung", "HTC", "Verizon", "Apple", "T-Mobile", "Sprint"];
 
 function renderGiphy() {
 
@@ -12,8 +12,6 @@ function renderGiphy() {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-
-    console.log(JSON.stringify(response))
 
     var results = response.data;
 
@@ -72,7 +70,7 @@ function renderButtons() {
     btn.text(buttons[i]);
 
     //adds bootstrap styling to the button
-    btn.addClass("btn-primary giphy-render");
+    btn.addClass("btn-primary button-render");
 
     //attributes the name of the button as a data value
     btn.attr("data-name", buttons[i]);
@@ -94,6 +92,24 @@ $("#add-giphy").on("click", function (event) {
   renderButtons();
 });
 
-$(document).on("click", ".giphy-render", renderGiphy);
+$(document).on("click", ".button-render", renderGiphy);
 
+
+$(document).on("click", ".giphy", function(){
+
+  alert("You've clicked me!");
+
+    var state = $(this).attr("data-state");
+
+    if(state === "still")
+    {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+    } else
+    {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
+
+});
 renderButtons();

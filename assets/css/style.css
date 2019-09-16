@@ -1,6 +1,6 @@
-/* body {
+ body {
     background-color: black;
-} */
+}
 
 h1 {
     text-align: center;
@@ -9,19 +9,27 @@ h1 {
     color: crimson;
     text-shadow: 5px 5px 5px yellowgreen;
     font-weight: 800;
-    font-size: 60px;
+    font-size: 80px;
 }
 
 #giphy-input {
-    width: 1024px;
+    width: 1010px;
+    height: 35px;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+.button-render {
+    color: crimson;
+    background-color: yellowgreen
+    border-color: crimson;
     margin: 5px;
     border-radius: 5px;
+    font-size: 20px;
+    font-weight: 80;
+    font-weight: 600;
+    text-shadow: 3px 2px 5px yellowgreen;
+}
+p {
+    color: crimson;
 }
 
 .giphy {
