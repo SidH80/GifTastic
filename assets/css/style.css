@@ -13,26 +13,8 @@ h1 {
 }
 
 #giphy-input {
-    width: 900px;
+    width: 1024px;
 }
-
-/* .recent-search {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin:20px 0px;
-} */
-
-/* .btn {
-    background-color: yellowgreen;
-} */
-
-/* .wrapper-buttons {
-    border: 1px solid lightgray;
-    margin-left: .5em;
-    margin-bottom: 1em;
-    border-radius: .5em;
-} */
 
 .btn-primary {
     color: #fff;
@@ -56,4 +38,6 @@ img {
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    height: 350px;
+    width: 350px;
 }
