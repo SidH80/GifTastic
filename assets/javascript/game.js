@@ -15,6 +15,8 @@ function renderGiphy() {
 
     var results = response.data;
 
+    console.log(results);
+
     $("#giphy-view").empty();
     // Looping over every result item
     for (var i = 0; i < results.length; i++) {
@@ -97,7 +99,6 @@ $(document).on("click", ".button-render", renderGiphy);
 
 $(document).on("click", ".giphy", function(){
 
-  alert("You've clicked me!");
 
     var state = $(this).attr("data-state");
 
