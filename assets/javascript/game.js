@@ -2,11 +2,23 @@ let buttons = ["Android", "Google", "Samsung"];
 
 function alertGiphyName() {
 
+  //assigns the data-name attribbute to be entered into the api link
   var giphyName = $(this).attr("data-name");
+  var api_key = "console.log(buttons);"
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+  giphyName + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+
+    console.log(JSON.stringify(response))
+
+  });
 
   console.log(giphyName);
 
-  alert(giphyName);
 };
 
 function renderButtons() {
@@ -35,15 +47,11 @@ function renderButtons() {
     $("#buttons-view").append(btn);
   }
 
-
 }
 
 // This function handles events where the add movie button is clicked
 
 $("#add-giphy").on("click", function (event) {
-  // event.preventDefault() prevents submit button from trying to send a form.
-  // Using a submit button instead of a regular button allows the user to hit
-  // "Enter" instead of clicking the button if desired
 
   event.preventDefault();
 
@@ -51,10 +59,11 @@ $("#add-giphy").on("click", function (event) {
 
   var button = $("#giphy-input").val().trim();
   //.trim() gets rid of extra whitespace in front and behind
-  // Write code to add the new movie into the movies array
+  // Write code to add the new giphy into the buttons array
 
   buttons.push(button);
-  // The renderButtons function is called, rendering the list of movie buttons
+  // The renderButtons function is called, rendering the list of giphy buttons
+
   renderButtons();
 });
 
