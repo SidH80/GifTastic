@@ -27,6 +27,7 @@ h1 {
     font-weight: 80;
     font-weight: 600;
     text-shadow: 3px 2px 5px yellowgreen;
+    box-shadow: 3px 3px 5px yellowgreen;
 }
 p {
     color: crimson;
@@ -35,6 +36,7 @@ p {
 .giphy {
     border: 1px solid #ffd5d5;
     page-break-inside: avoid;
+    box-shadow: 9px 9px 5px yellowgreen;
 }
 
 .giphy-content {

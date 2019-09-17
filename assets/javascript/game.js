@@ -39,7 +39,10 @@ function renderGiphy() {
 
         // Giving the image tag an src attribute of a proprty pulled off the
         // result item
-        giphyImage.attr("src", results[i].images.fixed_height.url);
+        giphyImage.attr("src", results[i].images.fixed_height_still.url);
+        giphyImage.attr("data-still", results[i].images.fixed_height_still.url);
+        giphyImage.attr("data-animate", results[i].images.fixed_height.url);
+        giphyImage.attr("data-state", "still");
 
         gifDiv.append(p);
         gifDiv.append(giphyImage);
@@ -97,16 +100,16 @@ $("#add-giphy").on("click", function (event) {
 $(document).on("click", ".button-render", renderGiphy);
 
 
-$(document).on("click", ".giphy", function(){
-
+$(document).on("click", "img", function(){
 
     var state = $(this).attr("data-state");
+    console.log(this);
 
     if(state === "still")
     {
       $(this).attr("src", $(this).attr("data-animate"));
       $(this).attr("data-state", "animate");
-    } else
+    } else if (state === "animate")
     {
       $(this).attr("src", $(this).attr("data-still"));
       $(this).attr("data-state", "still");
