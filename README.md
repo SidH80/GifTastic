@@ -1,33 +1,29 @@
 # GifTastic
 
+<h1>Giftastic</h1>
+
 Giftastic utilzes the Giphy API to search for your favorite Giphy. To search for your favorite Giphy just enter it into the search bar
 Giftastic will search the entire database and display your favorite giphy in an attactive UI.
 
-## Running the tests
 
-Explain how to run the automated tests for this system
+![Screen Shot 2019-10-30 at 10 45 16 PM](https://user-images.githubusercontent.com/51130585/69599896-af825f00-0fdc-11ea-86e7-fea694649c5d.png)
 
-### Break down into end to end tests
 
-Explain what these tests test and why
+<h2>About the Code</h2>
 
-```
-Give an example
-```
+This is a Javascript application. It utilizes jQuery to dynamically render each Giphy. It also uses AJAX for Giphy API calls
 
-### And coding style tests
+<h2>Technologies</h2>
 
-Explain what these tests test and why
+<br>
+`JavaScript`
+<br>
+`HTML`
+<br>
+`CSS`
+<br>
+`Bootstrap`
+<br>
+`jQuery`
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Bootstap](https://getbootstrap.com/) - The web framework used
-* [jQuery](https://jquery.com/) - The web framework used
+<h3>Search For you Favorite Giphy here <a href='https://sidh80.github.io/GifTastic/'>here!</a></h3>

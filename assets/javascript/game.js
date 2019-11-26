@@ -4,7 +4,6 @@ function renderGiphy() {
 
   //assigns the data-name attribbute to be entered into the api link
   var giphyName = $(this).attr("data-name");
-  var api_key = "console.log(buttons);"
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
   giphyName + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=12";
 
@@ -54,7 +53,7 @@ function renderGiphy() {
 
   });
 
-  console.log(giphyName);
+
 
 };
 
